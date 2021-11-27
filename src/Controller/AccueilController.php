@@ -19,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class AccueilController extends AbstractController {
     /**
-     * @Route("/", name="acceuil")
+     * @Route("/", name="accueil")
      * @return Response
      */
     public function index(): Response {
