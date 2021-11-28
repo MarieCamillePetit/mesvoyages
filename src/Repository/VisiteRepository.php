@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Repository\VisiteRepository;
 use App\Entity\Visite;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
