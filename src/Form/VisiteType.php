@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Form;
-
+use App\Entity\Environnement;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Visite;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -25,6 +26,12 @@ class VisiteType extends AbstractType
             ])
             ->add('tempmax', null, [
                 'label' => 't° max'
+            ])
+            ->add('environnements', EntityType::class,[
+                'class' => Environnement::class,
+                'choice_label' => 'nom',
+                'multiple' => true,
+                'required' => false
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Enregistrer'
