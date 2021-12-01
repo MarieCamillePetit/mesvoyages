@@ -18,6 +18,10 @@
         </div>
         <div class="col">
             <!-- emplacement photo -->
+            {% if visite.imagename %}
+                <img src="{{ app.request.getBasePath()~vich_uploader_asset(visite, 'imageFile') }}"
+                     class="card-img-top" style="with:100%;height:auto;">
+            {% endif %}
         </div>
     </div>
     <div class="row mt-5">
