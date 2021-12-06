@@ -55,32 +55,18 @@ class VisiteRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return Visite[] Returns an array of Visite objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('v')
-            ->andWhere('v.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('v.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+    /**
+     * Retourne les n visites les plus récentes
+     * @param type $nb
+     * @return Visite[]
+     */
+    public function findAllLasted($nb) : array {
+        return $this->createQueryBuilder('v') // alias de la table
+           ->orderBy('v.datecreation', 'DESC')
+           ->setMaxResults($nb)     
+           ->getQuery()
+           ->getResult();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Visite
-    {
-        return $this->createQueryBuilder('v')
-            ->andWhere('v.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+
 }
