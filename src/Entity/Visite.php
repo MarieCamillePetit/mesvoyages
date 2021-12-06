@@ -59,7 +59,7 @@ class Visite
     private $tempmin;
 
     /**
-     * @ORM\Column(type="integer", nullable=true
+     * @ORM\Column(type="integer", nullable=true)
      * @Assert\GreaterThan(propertyPath="tempmin")
      */
     private $tempmax;
